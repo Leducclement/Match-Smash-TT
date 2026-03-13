@@ -9,27 +9,31 @@
 <body>
   <div class="container">
     <h1>🏓 Smash Tennis de Table</h1>
-    <div class="score" id="score">0</div>
-    <div class="buttons">
-      <button class="point0" onclick="addPoints(0)">Faute<br>0 point</button>
-      <button class="point1" onclick="addPoints(1)">Balle renvoyée<br>1 point</button>
-      <button class="point10" onclick="addPoints(10)">1ère cordelette<br>10 points</button>
-      <button class="point100" onclick="addPoints(100)">2ème cordelette<br>100 points</button>
+
+    <div class="board">
+      <div class="team red">
+        <div class="smash">🔴 Rouge</div>
+        <div class="score" id="scoreRed">0</div>
+        <button class="smashBtn" onclick="smash('red')">SMASH +1</button>
+        <button class="pointBtn" onclick="point('red')">Point +1</button>
+        <div class="statbox">Smash : <strong id="smashRed">0</strong></div>
+      </div>
+
+      <div class="team blue">
+        <div class="smash">🔵 Bleu</div>
+        <div class="score" id="scoreBlue">0</div>
+        <button class="smashBtn" onclick="smash('blue')">SMASH +1</button>
+        <button class="pointBtn" onclick="point('blue')">Point +1</button>
+        <div class="statbox">Smash : <strong id="smashBlue">0</strong></div>
+      </div>
     </div>
-    <div class="controls">
-      <button class="undo" onclick="undo()">↩ Annuler</button>
-      <button class="reset" onclick="resetScore()">🔄 Reset</button>
-    </div>
-    <div class="stats">
-      <div class="statbox">Frappes<br><strong id="shots">0</strong></div>
-      <div class="statbox">Smash réussis<br><strong id="success">0</strong></div>
-      <div class="statbox">0 point<br><strong id="stat0">0</strong></div>
-      <div class="statbox">1 point<br><strong id="stat1">0</strong></div>
-      <div class="statbox">10 points<br><strong id="stat10">0</strong></div>
-      <div class="statbox">100 points<br><strong id="stat100">0</strong></div>
-      <div class="statbox rate">Taux de réussite : <span id="rate">0</span> %</div>
-    </div>
+
+    <div class="winner" id="winner"></div>
+
+    <button class="reset" onclick="resetGame()">🔄 Reset</button>
   </div>
+
+  <canvas id="confetti"></canvas>
   <script src="script.js"></script>
 </body>
 </html>
