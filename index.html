@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>🏓 Smash Tennis de Table</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🏓 Smash Tennis de Table</h1>
+
+    <div class="board">
+      <div class="team red">
+        <div class="smash">🔴 Rouge</div>
+        <div class="score" id="scoreRed">0</div>
+        <button class="smashBtn" onclick="smash('red')">SMASH +1</button>
+        <button class="pointBtn" onclick="point('red')">Point +1</button>
+        <div class="statbox">Smash : <strong id="smashRed">0</strong></div>
+      </div>
+
+      <div class="team blue">
+        <div class="smash">🔵 Bleu</div>
+        <div class="score" id="scoreBlue">0</div>
+        <button class="smashBtn" onclick="smash('blue')">SMASH +1</button>
+        <button class="pointBtn" onclick="point('blue')">Point +1</button>
+        <div class="statbox">Smash : <strong id="smashBlue">0</strong></div>
+      </div>
+    </div>
+
+    <div class="winner" id="winner"></div>
+
+    <button class="reset" onclick="resetGame()">🔄 Reset</button>
+  </div>
+
+  <canvas id="confetti"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
